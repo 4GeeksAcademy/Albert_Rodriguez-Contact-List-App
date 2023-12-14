@@ -1,0 +1,10 @@
+.edit-contact-form {
+  max-width: 500px; /* Limit the width of the form */
+  width: 100%;
+}
+
+.edit-contact-form input,
+.edit-contact-form button {
+  margin: 10px 0; /* Add some vertical spacing */
+  width: 100%; /* Full width inputs and button */
+}

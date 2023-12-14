@@ -31,54 +31,56 @@ export const Home = () => {
   };
 
   return (
-    <div>
+    <div className="d-flex flex-column align-items-center">
       <h1>Contact List</h1>
 
       {/* Add Contact Form */}
-      <div>
-        <input
-          type="text"
-          name="name"
-          placeholder="Name"
-          value={newContact.name}
-          onChange={handleInputChange}
-        />
-        <input
-          type="text"
-          name="phone"
-          placeholder="Phone"
-          value={newContact.phone}
-          onChange={handleInputChange}
-        />
-        <input
-          type="email"
-          name="email"
-          placeholder="Email"
-          value={newContact.email}
-          onChange={handleInputChange}
-        />
-        <input
-          type="text"
-          name="address"
-          placeholder="Address"
-          value={newContact.address}
-          onChange={handleInputChange}
-        />
-        <button onClick={handleAddContact}>Add Contact</button>
-      </div>
+      <div className="contact-form text-center">
+        <div>
+          <input
+            type="text"
+            name="name"
+            placeholder="Name"
+            value={newContact.name}
+            onChange={handleInputChange}
+          />
+          <input
+            type="text"
+            name="phone"
+            placeholder="Phone"
+            value={newContact.phone}
+            onChange={handleInputChange}
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            value={newContact.email}
+            onChange={handleInputChange}
+          />
+          <input
+            type="text"
+            name="address"
+            placeholder="Address"
+            value={newContact.address}
+            onChange={handleInputChange}
+          />
+          <button onClick={handleAddContact}>Add Contact</button>
+        </div>
 
-      {/* Contact List */}
-      <ul>
-        {store.contacts.length > 0 ? (
-          store.contacts.map((contact) => (
-            <li key={contact.id}>
-              <Link to={`/contact/${contact.id}`}>{contact.full_name}</Link>
-            </li>
-          ))
-        ) : (
-          <p>No contacts available.</p>
-        )}
-      </ul>
+        {/* Contact List */}
+        <ul className="list-unstyled">
+          {store.contacts.length > 0 ? (
+            store.contacts.map((contact) => (
+              <li key={contact.id}>
+                <Link to={`/contact/${contact.id}`}>{contact.full_name}</Link>
+              </li>
+            ))
+          ) : (
+            <p>No contacts available.</p>
+          )}
+        </ul>
+      </div>
     </div>
   );
 };
